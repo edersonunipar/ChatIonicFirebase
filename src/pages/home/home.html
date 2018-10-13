@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IFPR - Sala
+     <ion-input placeholder="Digite seu nome?" [(ngModel)]="nome"></ion-input>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #content padding id="content">
+  <ion-card *ngFor="let mensagem of mensagens">
+    <ion-card-header>
+      {{mensagem.usuario}} disse:
+    </ion-card-header>
+    <ion-card-content>
+      {{mensagem.mensaginha}}
+    </ion-card-content>
+  </ion-card>
+  <div id="content-end"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Digite sua mensagem" [(ngModel)]="mensagem"></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="enviarMensagem()">
+          Enviar
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
